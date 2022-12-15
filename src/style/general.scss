@@ -1,0 +1,29 @@
+// variables.scss
+@use './partials/variables.scss' as *;
+
+// Bootstrap
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+// external font
+@import 'node_modules/@fontsource/montserrat/index.css';
+@import 'node_modules/@fontsource/montserrat/700.css';
+
+body {
+    font-family: $main-font;
+    color: $text-color;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

@@ -9,10 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/montserrat": "^4.5.13",
+    "axios": "^1.2.1",
+    "bootstrap": "^5.2.3",
     "vue": "^3.2.45"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
+    "sass": "^1.56.2",
     "vite": "^4.0.0"
   }
 }
