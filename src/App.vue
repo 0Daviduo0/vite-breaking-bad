@@ -21,10 +21,10 @@ export default {
   methods:{ GetCharacters(){
     axios.get(store.apiURL)
     .then(res => {
-      store.characterList = res.data.results;
+      store.characterList = res.data.results;   // i dati vengono importati tramite store.*nome proprietà utilizzata da store e messi all'interno dell'array vuoto 
     })
     .catch(err => {
-      console.log("Errors", err)
+      console.log("Errors", err)  //mostra eventuali errori nel log della console
     })
     }
   },
@@ -36,7 +36,7 @@ export default {
 </script>
 
 <template>
-  <AppHeader msg="Rick and Morty App"/>
+  <AppHeader :msg="store.titolo"/>
   <main>
     <CharactersList/>
   </main>

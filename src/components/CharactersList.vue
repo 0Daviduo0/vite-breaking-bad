@@ -7,14 +7,14 @@ import { store } from '../store.js'
     export default{
         name: "CharactersList",
         components: {
-    SingleCharacter,
-    stringifyExpression
-},
+            SingleCharacter,
+            stringifyExpression
+        },
         data() {
-        return {
-        store,
-        }
-    },
+            return {
+                store,
+            }
+        },
     }
 
 </script>
@@ -25,7 +25,7 @@ import { store } from '../store.js'
 
         <div class="row">
             <div v-for="character in store.characterList" class="col-6 col-md-4 col-lg-3 mb-5 character_card" :key="character.id">
-                <!-- card -->
+                <!-- Componente card -->
                 <SingleCharacter :info="character"/>
             </div>
         </div>
