@@ -5,6 +5,8 @@ export const store = reactive({
     characterList: [],
     apiURL: "https://rickandmortyapi.com/api/character",
     titolo:"Rick and Morty App",
+    selectInput: "",
+    selectVariableName: "status",
 });
 
 // i dati vengono centralizzati per poter essere importati nei vari componenti

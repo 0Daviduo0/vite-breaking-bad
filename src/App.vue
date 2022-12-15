@@ -2,6 +2,7 @@
 import axios from 'axios';
 import { onMounted } from 'vue';
 import AppHeader from './components/AppHeader.vue'
+import AppSearch from './components/AppSearch.vue';
 import CharactersList from './components/CharactersList.vue'
 
 import { store } from './store.js';
@@ -11,15 +12,22 @@ export default {
   components: {
     AppHeader,
     CharactersList,
-  },
+    AppSearch
+},
   data() {
     return {
       store,
     }
   },
   // Chiamata API
-  methods:{ GetCharacters(){
-    axios.get(store.apiURL)
+  methods:{ getCharacters(){
+
+    let searchURL = store.apiURL;
+    if(store.selectInput !== ""){
+      searchURL += `?${store.selectVariableName}=${store.selectInput}`
+    }
+
+    axios.get(searchURL)
     .then(res => {
       store.characterList = res.data.results;   // i dati vengono importati tramite store.*nome proprietà utilizzata da store e messi all'interno dell'array vuoto 
     })
@@ -30,7 +38,7 @@ export default {
   },
   // Esecuzione chiamata
   mounted(){
-    this.GetCharacters();
+    this.getCharacters();
   }
 }
 </script>
@@ -38,6 +46,7 @@ export default {
 <template>
   <AppHeader :msg="store.titolo"/>
   <main>
+    <AppSearch @search="getCharacters"/>
     <CharactersList/>
   </main>
 </template>

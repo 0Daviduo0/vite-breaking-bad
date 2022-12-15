@@ -34,4 +34,10 @@ export default{
         }
     }
 
+    img{
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
 </style>
