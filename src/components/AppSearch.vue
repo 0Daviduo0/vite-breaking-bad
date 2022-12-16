@@ -17,12 +17,11 @@ import { store } from '../store.js';
 
     <div class="filter-container">
         <form>
-            <select name="status" id="status" v-model="store.selectInput">
+            <select name="status" id="status" v-model="store.selectInput" @click.prevent="$emit('search')">
                 <option value="Alive">Alive</option>
                 <option value="Dead">Dead</option>
                 <option value="unknown">unknown</option>
             </select>
-            <input type="submit" @click.prevent="$emit('search')">
         </form>
     </div>
 
