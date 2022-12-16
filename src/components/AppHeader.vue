@@ -19,6 +19,7 @@ export default{
 
     h1{
         font-weight: 700;
+        color: #fff;
     }
 
 </style>
